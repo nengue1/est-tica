@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"> <!-- Define codificação UTF-8 para acentos -->
+  <title>Estética Automotiva</title> <!-- Título  da aba do navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+
+  <header>
+    <h1>Estética Automotiva</h1>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#bodykit">Body Kit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <ul>
+        <li>Polimento</li>
+        <li>Higienização Interna</li>
+        <li>Vitrificação de Pintura</li>
+        <li>Instalação de Body Kits</li>
+      </ul>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>Profissionais especializados em cuidados automotivos. Garantimos brilho e proteção para seu veículo.</p>
+    </section>
+
+    <section id="bodykit">
+      <h2>Customização de Body Kit</h2>
+      <img src="20a768d2-b151-440e-a9bb-04557d43cedd.jfif" alt="Carro com body kit personalizado">
+      <p>
+        A customização de <strong>body kit</strong> envolve a instalação de peças externas que alteram a aparência e a aerodinâmica do carro. 
+      </p>
+      <p>
+        Kits podem ser prontos ou personalizados, feitos em fibra de vidro, ABS ou carbono. A instalação requer ajustes e pintura.
+      </p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Email: contato@esteticaauto.com</p>
+      <p>WhatsApp: (11) 99999-9999</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Estética Automotiva</p>
+  </footer>
+
+  <!-- Mensagem de cookies -->
+  <div id="cookieConsent">
+    <p>Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita nossa política de cookies.</p>
+    <button id="acceptCookies">Aceitar</button>
+  </div>
+
+  <!-- Script para controlar o consentimento -->
+  <script>
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('acceptCookies');
+
+    // Verifica se já aceitou os cookies
+    if (!localStorage.getItem('cookiesAccepted')) {
+      cookieConsent.style.display = 'flex'; // mostra a mensagem
+    }
+
+    // Ao clicar em aceitar
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true'); // salva no navegador
+      cookieConsent.style.display = 'none'; // esconde a mensagem
+    });
+  </script>
+
+</body>
+</html>
