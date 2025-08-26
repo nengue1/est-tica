@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Estética Automotiva</title>
-  
+
   <!-- CSS externo -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
   <!-- Cabeçalho -->
   <header style="position: relative;">
     <h1>Estética Automotiva</h1>
     <nav>
-      <a href="servicos.html">Serviços</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-      <a href="bodykit.html">Body Kit</a>
+      <a href="servicos.html">Nossos serviços</a>
+      <a href="sobre.html">Quem somos</a>
+      <a href="contato.html">fale conosco</a>
+      <a href="bodykit.html">Body Kits e Estilo</a>
     </nav>
 
     <!-- Ícone de login no topo -->
     <div id="loginIcon">
-      <a href="#login" title="Login">
+      <a href="login.html" title="Login">
         <i class="fas fa-user"></i>
       </a>
     </div>
@@ -32,26 +34,112 @@
 
   <!-- Conteúdo principal com formulário de login -->
   <main class="login-container">
-    <h2>Login</h2>
-    <form action="#" method="post" class="login-form">
-      <label for="username">Usuário</label>
-      <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
 
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      <button type="submit">Entrar</button>
-    </form>
+      <style>
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+        }
+
+        button {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 12px;
+          font-size: 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
+
+        .back-link {
+          display: block;
+          margin-top: 15px;
+          text-align: center;
+          color: #ccc;
+          text-decoration: none;
+          font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+          text-decoration: underline;
+          color: #fff;
+        }
+
+        .voltar-container {
+          margin: 20px;
+        }
+
+        .voltar-container a {
+          text-decoration: none;
+          color: #333;
+          font-weight: bold;
+          font-size: 16px;
+        }
+
+        .voltar-container a i {
+          margin-right: 8px;
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <main>
+        <!-- Botão de Voltar -->
+        <div class="voltar-container">
+          <a href="javascript:history.back()" title="Voltar">
+            <i class="fas fa-arrow-left"></i> Voltar
+          </a>
+        </div>
+
+        <h2>Login</h2>
+
+        <form action="#" method="post" class="login-form">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required placeholder="Digite seu usuário" />
+
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required placeholder="Digite sua senha" />
+
+          <button type="submit">Entrar</button>
+          <div class="login-container"></div>
+        </form>
+
+        <a href="index.html" class="back-link">Voltar para o site</a>
   </main>
 
   <!-- Rodapé -->
   <footer>
-    <p>&copy; 2025 Estética Automotiva</p>
+    <p>&copy;Estética Automotiva</p>
   </footer>
 
   <!-- Aviso de cookies -->
   <div id="cookieConsent">
-    <p>Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita nossa política de cookies.</p>
+    <p>Usamos cookies para oferecer uma melhor experiência de navegação. Ao continuar, você concorda com nossa política de privacidade.</p>
     <button id="acceptCookies">Aceitar</button>
   </div>
 
@@ -70,5 +158,29 @@
     });
   </script>
 
+  <script>
+    // Script de boas-vindas no login
+    const loginForm = document.querySelector('.login-form');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita envio real do formulário
+
+      const username = document.getElementById('username').value;
+
+      // Criar mensagem de boas-vindas
+      const welcomeMessage = document.createElement('p');
+      welcomeMessage.textContent = `Olá, ${username}! Que bom ter você de volta.`;
+      welcomeMessage.style.fontSize = '1.2em';
+      welcomeMessage.style.marginTop = '20px';
+      welcomeMessage.style.color = 'green';
+
+      // Esconder o formulário e exibir a mensagem
+      loginForm.style.display = 'none';
+      document.querySelector('.login-container').appendChild(welcomeMessage);
+    });
+
+  </script>
+
 </body>
+
 </html>
