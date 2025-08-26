@@ -1,39 +1,155 @@
-/* Define fonte, margens e padding da página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(158, 158, 158);
+  /* Define a imagem de fundo para todo o site */
+  background-image: url('Iluminacao-para-oficina-mecanica.webp');
+  background-size: cover;         /* Faz a imagem cobrir toda a tela */
+  background-position: center;    /* Centraliza a imagem no fundo */
+  background-repeat: no-repeat;   /* Não repete a imagem */
+  background-attachment: fixed;   /* Faz o fundo fixo ao rolar a página */
+  margin: 0;                      /* Remove margem padrão */
+  font-family: Arial, sans-serif; /* Fonte legível */
+  color: white;                   /* Cor do texto para contraste com fundo escuro */
+}
+
+/* ---------- Cabeçalho ----------- */
+header {
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente preto */
+  padding: 20px;
+  text-align: center;
+  position: relative;                    /* Para posicionar o ícone login dentro */
+}
+
+/* Navegação */
+nav a {
+  margin: 0 10px;           /* Espaçamento horizontal entre links */
+  color: white;             /* Cor do texto dos links */
+  text-decoration: none;    /* Remove sublinhado */
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline; /* Sublinha quando passar o mouse */
+}
+
+/* ---------- Ícone de login ----------- */
+#loginIcon {
+  position: absolute;    /* Posiciona relativo ao header */
+  top: 20px;             /* Distância do topo */
+  right: 20px;           /* Distância da direita */
+  font-size: 24px;       /* Tamanho do ícone */
+}
+
+#loginIcon a {
+  color: white;
+  text-decoration: none;
+}
+
+#loginIcon a:hover {
+  color: #4CAF50;        /* Verde ao passar o mouse */
+}
+
+/* ---------- Conteúdo principal ----------- */
+main {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para facilitar leitura */
+  max-width: 1200px;       /* Limita a largura para melhor visualização */
+  margin: 20px auto;       /* Centraliza horizontalmente */
+  border-radius: 8px;
+}
+
+/* Estilo das imagens no Body Kit */
+.image-row {
+  display: flex;           /* Deixa as imagens lado a lado */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  gap: 20px;               /* Espaçamento entre imagens */
+  margin-bottom: 20px;
+}
+
+.bodykit-img {
+  max-width: 45%;          /* Cada imagem ocupa até 45% do container */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* ---------- Lista de serviços ----------- */
+ul {
+  list-style-type: disc; /* Marcadores com bolinhas */
+  padding-left: 20px;    /* Espaço à esquerda */
+}
+
+/* ---------- Rodapé ----------- */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ---------- Aviso de Cookies ----------- */
+#cookieConsent {
+  position: fixed;               /* Fica fixo na tela */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 15px;
+  display: none;                /* Inicialmente oculto, mostrado via JS */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;                /* Fica acima de outros elementos */
+  font-size: 14px;
+}
+
+#cookieConsent button {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#cookieConsent button:hover {
+  background-color: #45a049;
+}
+
+/* ---------- Responsividade ----------- */
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column; /* Imagens empilhadas no mobile */
+    gap: 10px;
   }
-  
-  /* Estilo do cabeçalho e rodapé: fundo escuro, texto branco e centralizado */
-  header, footer {
-    background-color: #519602;
-    color: rgb(50, 49, 49);
-    text-align: center;
-    padding: 1em;
+
+  .bodykit-img {
+    max-width: 100%; /* Imagem ocupa toda largura no mobile */
   }
-  
-  /* Espaçamento e estilo dos links do menu de navegação */
+
   nav a {
-    margin: 0 10px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+    display: block;
+    margin: 5px 0;
   }
-  
-  /* Espaço interno do conteúdo principal */
+
+  #loginIcon {
+    position: static;
+    text-align: right;
+    margin-top: 10px;
+  }
+
   main {
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
   }
-  
-  /* Espaço entre as seções */
-  section {
-    margin-bottom: 20px;
-  }
-  
-  /* Define tamanho fixo para imagem */
-  img {
-    width: 72px I !important;  /* Largura fixa de 72 pixels */
-    height: auto; /* Mantém proporção da imagem */
-    border-radius: 8px; /* Cantos arredondados */
-  }
+}
+.login-container {
+  max-width: 1000px; /* Aumenta a largura */
+  padding: 70px;    /* Mais espaço interno */
+  font-size: 1.1rem; /* Texto maior */
+}

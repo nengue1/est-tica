@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"> <!-- Define codificação UTF-8 para acentos -->
-  <title>Estética Automotiva</title> <!-- Título  da aba do navegador -->
-  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS externo -->
+  <meta charset="UTF-8">
+  <title>Estética Automotiva</title>
+  
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <header>
+  <!-- Cabeçalho -->
+  <header style="position: relative;">
     <h1>Estética Automotiva</h1>
     <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="#bodykit">Body Kit</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="bodykit.html">Body Kit</a>
     </nav>
+
+    <!-- Ícone de login no topo -->
+    <div id="loginIcon">
+      <a href="#login" title="Login">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
   </header>
 
-  <main>
-    <section id="servicos">
-      <h2>Serviços</h2>
-      <ul>
-        <li>Polimento</li>
-        <li>Higienização Interna</li>
-        <li>Vitrificação de Pintura</li>
-        <li>Instalação de Body Kits</li>
-      </ul>
-    </section>
+  <!-- Conteúdo principal com formulário de login -->
+  <main class="login-container">
+    <h2>Login</h2>
+    <form action="#" method="post" class="login-form">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
 
-    <section id="sobre">
-      <h2>Sobre Nós</h2>
-      <p>Profissionais especializados em cuidados automotivos. Garantimos brilho e proteção para seu veículo.</p>
-    </section>
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
 
-    <section id="bodykit">
-      <h2>Customização de Body Kit</h2>
-      <img src="20a768d2-b151-440e-a9bb-04557d43cedd.jfif" alt="Carro com body kit personalizado">
-      <p>
-        A customização de <strong>body kit</strong> envolve a instalação de peças externas que alteram a aparência e a aerodinâmica do carro. 
-      </p>
-      <p>
-        Kits podem ser prontos ou personalizados, feitos em fibra de vidro, ABS ou carbono. A instalação requer ajustes e pintura.
-      </p>
-    </section>
-
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Email: contato@esteticaauto.com</p>
-      <p>WhatsApp: (11) 99999-9999</p>
-    </section>
+      <button type="submit">Entrar</button>
+    </form>
   </main>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 Estética Automotiva</p>
   </footer>
 
-  <!-- Mensagem de cookies -->
+  <!-- Aviso de cookies -->
   <div id="cookieConsent">
     <p>Este site usa cookies para melhorar sua experiência. Ao continuar, você aceita nossa política de cookies.</p>
     <button id="acceptCookies">Aceitar</button>
   </div>
 
-  <!-- Script para controlar o consentimento -->
+  <!-- Script de cookies -->
   <script>
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptBtn = document.getElementById('acceptCookies');
 
-    // Verifica se já aceitou os cookies
     if (!localStorage.getItem('cookiesAccepted')) {
-      cookieConsent.style.display = 'flex'; // mostra a mensagem
+      cookieConsent.style.display = 'flex';
     }
 
-    // Ao clicar em aceitar
     acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookiesAccepted', 'true'); // salva no navegador
-      cookieConsent.style.display = 'none'; // esconde a mensagem
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieConsent.style.display = 'none';
     });
   </script>
 
